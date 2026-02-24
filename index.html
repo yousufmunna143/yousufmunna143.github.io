@@ -6,7 +6,7 @@
   <title>Shaik Yousuf | Backend Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -15,10 +15,10 @@
     }
 
     :root {
-      --primary: #6366f1;
-      --primary-dark: #4f46e5;
-      --secondary: #8b5cf6;
-      --accent: #ec4899;
+      --primary: #0d9488;
+      --primary-dark: #0f766e;
+      --secondary: #14b8a6;
+      --accent: #f59e0b;
       --dark: #0f172a;
       --dark-light: #1e293b;
       --gray: #64748b;
@@ -27,32 +27,11 @@
     }
 
     body {
-      font-family: 'Inter', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       background: var(--dark);
       color: var(--white);
       line-height: 1.7;
       overflow-x: hidden;
-    }
-
-    /* Animated gradient background */
-    body::before {
-      content: '';
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 75%, #00f2fe 100%);
-      background-size: 400% 400%;
-      animation: gradientShift 15s ease infinite;
-      opacity: 0.05;
-      z-index: -1;
-    }
-
-    @keyframes gradientShift {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
     }
 
     /* Hero Section */
@@ -60,77 +39,33 @@
       min-height: 100vh;
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
       position: relative;
-      overflow: hidden;
       padding: 20px;
     }
 
-    .hero::before {
-      content: '';
-      position: absolute;
-      width: 500px;
-      height: 500px;
-      background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
-      top: -250px;
-      right: -250px;
-      opacity: 0.3;
-      animation: float 20s ease-in-out infinite;
-    }
-
-    .hero::after {
-      content: '';
-      position: absolute;
-      width: 400px;
-      height: 400px;
-      background: radial-gradient(circle, var(--secondary) 0%, transparent 70%);
-      bottom: -200px;
-      left: -200px;
-      opacity: 0.3;
-      animation: float 15s ease-in-out infinite reverse;
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translate(0, 0) rotate(0deg); }
-      33% { transform: translate(30px, -30px) rotate(120deg); }
-      66% { transform: translate(-20px, 20px) rotate(240deg); }
+    .hero .container {
+      position: relative;
     }
 
     .hero-content {
-      max-width: 1200px;
-      text-align: center;
-      z-index: 1;
-      animation: fadeInUp 1s ease;
-    }
-
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      max-width: 640px;
+      text-align: left;
     }
 
     .hero h1 {
-      font-size: clamp(2.5rem, 8vw, 5rem);
-      font-weight: 800;
+      font-family: 'Fraunces', serif;
+      font-size: clamp(2.25rem, 6vw, 3.5rem);
+      font-weight: 700;
       margin-bottom: 1rem;
-      background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      animation: fadeInUp 1s ease 0.2s both;
+      color: var(--white);
     }
 
     .hero h2 {
-      font-size: clamp(1.2rem, 3vw, 1.8rem);
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
       font-weight: 500;
       color: var(--gray);
-      margin-bottom: 2rem;
-      animation: fadeInUp 1s ease 0.4s both;
+      margin-bottom: 1.5rem;
       min-height: 2.5rem;
     }
 
@@ -156,115 +91,87 @@
     }
 
     .hero p {
-      font-size: clamp(1rem, 2vw, 1.2rem);
+      font-size: clamp(1rem, 2vw, 1.15rem);
       color: var(--gray);
-      max-width: 700px;
-      margin: 0 auto 1rem;
+      margin: 0 0 0.75rem;
       line-height: 1.8;
-      animation: fadeInUp 1s ease 0.6s both;
     }
 
     .fun-fact {
-      font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+      font-size: clamp(0.9rem, 1.8vw, 1.05rem);
       color: var(--accent);
       font-style: italic;
-      margin-bottom: 2.5rem;
-      animation: fadeInUp 1s ease 0.7s both;
+      margin-bottom: 1.5rem;
     }
 
-    .emoji {
-      display: inline-block;
-      animation: wave 2s ease-in-out infinite;
-      transform-origin: 70% 70%;
-      font-size: 1.2em;
+    .right-now {
+      font-size: 0.9rem;
+      color: var(--gray);
+      margin-bottom: 2rem;
     }
 
-    @keyframes wave {
-      0%, 100% { transform: rotate(0deg); }
-      10%, 30% { transform: rotate(14deg); }
-      20%, 40% { transform: rotate(-8deg); }
-      50% { transform: rotate(14deg); }
-      60% { transform: rotate(-4deg); }
-      70% { transform: rotate(10deg); }
-      80% { transform: rotate(0deg); }
+    .right-now span {
+      color: var(--white);
     }
+
 
     .cta-buttons {
       display: flex;
-      gap: 1.5rem;
-      justify-content: center;
+      gap: 1rem;
       flex-wrap: wrap;
-      animation: fadeInUp 1s ease 0.8s both;
     }
 
     .btn {
-      padding: 1rem 2.5rem;
-      border-radius: 50px;
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
       font-weight: 600;
-      font-size: 1rem;
+      font-size: 0.95rem;
       text-decoration: none;
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
+      transition: color 0.2s, background 0.2s, border-color 0.2s;
       border: none;
       cursor: pointer;
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      background: var(--primary);
       color: var(--white);
-      box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
     }
 
     .btn-primary:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 15px 40px rgba(99, 102, 241, 0.4);
+      background: var(--primary-dark);
     }
 
     .btn-secondary {
       background: transparent;
       color: var(--white);
-      border: 2px solid var(--primary);
+      border: 1px solid var(--gray);
     }
 
     .btn-secondary:hover {
-      background: var(--primary);
-      transform: translateY(-3px);
+      border-color: var(--white);
+      color: var(--white);
     }
 
     /* Container */
     .container {
-      max-width: 1200px;
+      max-width: 720px;
       margin: 0 auto;
       padding: 0 20px;
     }
 
     /* Section Styling */
     section {
-      padding: 100px 20px;
+      padding: 4rem 20px;
       position: relative;
     }
 
     .section-title {
-      font-size: clamp(2rem, 5vw, 3rem);
+      font-family: 'Fraunces', serif;
+      font-size: clamp(1.5rem, 4vw, 2rem);
       font-weight: 700;
-      margin-bottom: 3rem;
-      text-align: center;
-      position: relative;
-      display: inline-block;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-
-    .section-title::after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: 0;
-      width: 100%;
-      height: 4px;
-      background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
-      border-radius: 2px;
+      margin-bottom: 2rem;
+      text-align: left;
+      color: var(--white);
     }
 
     /* Experience Cards */
@@ -275,28 +182,14 @@
 
     .experience-card {
       background: var(--dark-light);
-      border-radius: 20px;
-      padding: 2.5rem;
-      border: 1px solid rgba(99, 102, 241, 0.1);
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .experience-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 4px;
-      height: 100%;
-      background: linear-gradient(180deg, var(--primary), var(--secondary));
+      border-radius: 8px;
+      padding: 2rem;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      transition: border-color 0.2s;
     }
 
     .experience-card:hover {
-      transform: translateY(-5px);
-      border-color: var(--primary);
-      box-shadow: 0 20px 60px rgba(99, 102, 241, 0.2);
+      border-color: rgba(255, 255, 255, 0.12);
     }
 
     .experience-header {
@@ -311,9 +204,9 @@
     }
 
     .experience-period {
-      color: var(--primary);
-      font-weight: 600;
-      font-size: 0.95rem;
+      color: var(--gray);
+      font-weight: 500;
+      font-size: 0.9rem;
     }
 
     .experience-list {
@@ -329,11 +222,11 @@
     }
 
     .experience-list li::before {
-      content: '▹';
+      content: '·';
       position: absolute;
       left: 0;
-      color: var(--primary);
-      font-size: 1.2rem;
+      color: var(--gray);
+      font-weight: bold;
     }
 
     .tech-stack {
@@ -344,13 +237,12 @@
     }
 
     .tech-badge {
-      background: rgba(99, 102, 241, 0.1);
-      color: var(--primary);
-      padding: 0.4rem 1rem;
-      border-radius: 20px;
-      font-size: 0.85rem;
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--gray);
+      padding: 0.35rem 0.75rem;
+      border-radius: 4px;
+      font-size: 0.8rem;
       font-weight: 500;
-      border: 1px solid rgba(99, 102, 241, 0.2);
     }
 
     /* Projects Grid */
@@ -362,28 +254,14 @@
 
     .project-card {
       background: var(--dark-light);
-      border-radius: 20px;
-      padding: 2.5rem;
-      border: 1px solid rgba(99, 102, 241, 0.1);
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .project-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 4px;
-      background: linear-gradient(90deg, var(--primary), var(--accent));
+      border-radius: 8px;
+      padding: 2rem;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      transition: border-color 0.2s;
     }
 
     .project-card:hover {
-      transform: translateY(-8px);
-      border-color: var(--primary);
-      box-shadow: 0 25px 70px rgba(99, 102, 241, 0.25);
+      border-color: rgba(255, 255, 255, 0.12);
     }
 
     .project-title {
@@ -407,22 +285,21 @@
 
     .skill-category {
       background: var(--dark-light);
-      border-radius: 20px;
-      padding: 2rem;
-      border: 1px solid rgba(99, 102, 241, 0.1);
-      transition: all 0.3s ease;
+      border-radius: 8px;
+      padding: 1.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      transition: border-color 0.2s;
     }
 
     .skill-category:hover {
-      border-color: var(--primary);
-      transform: translateY(-5px);
+      border-color: rgba(255, 255, 255, 0.12);
     }
 
     .skill-category-title {
-      font-size: 1.3rem;
-      font-weight: 700;
-      margin-bottom: 1.5rem;
-      color: var(--primary);
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: var(--white);
     }
 
     .skill-tags {
@@ -432,19 +309,12 @@
     }
 
     .skill-tag {
-      background: rgba(99, 102, 241, 0.15);
-      color: var(--white);
-      padding: 0.6rem 1.2rem;
-      border-radius: 25px;
-      font-size: 0.9rem;
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--gray);
+      padding: 0.4rem 0.8rem;
+      border-radius: 4px;
+      font-size: 0.85rem;
       font-weight: 500;
-      border: 1px solid rgba(99, 102, 241, 0.3);
-      transition: all 0.3s ease;
-    }
-
-    .skill-tag:hover {
-      background: var(--primary);
-      transform: scale(1.05);
     }
 
     /* Tech Icons */
@@ -457,16 +327,12 @@
     }
 
     .tech-icon {
-      width: 60px;
-      height: 60px;
-      transition: all 0.3s ease;
-      filter: grayscale(100%);
-      opacity: 0.7;
+      width: 28px;
+      height: 28px;
+      opacity: 0.6;
     }
 
     .tech-icon:hover {
-      transform: translateY(-10px) scale(1.1);
-      filter: grayscale(0%);
       opacity: 1;
     }
 
@@ -478,28 +344,19 @@
     }
 
     .achievement-card {
-      background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.1));
-      border-radius: 20px;
-      padding: 2rem;
+      background: var(--dark-light);
+      border-radius: 8px;
+      padding: 1.5rem;
       text-align: center;
-      border: 1px solid rgba(99, 102, 241, 0.2);
-      transition: all 0.3s ease;
-    }
-
-    .achievement-card:hover {
-      transform: scale(1.05);
-      border-color: var(--primary);
-      box-shadow: 0 15px 40px rgba(99, 102, 241, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.06);
     }
 
     .achievement-number {
-      font-size: 2.5rem;
-      font-weight: 800;
-      background: linear-gradient(135deg, var(--primary), var(--accent));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      margin-bottom: 0.5rem;
+      font-family: 'Fraunces', serif;
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.25rem;
     }
 
     .achievement-text {
@@ -510,37 +367,32 @@
 
     /* Footer */
     footer {
-      background: var(--dark-light);
       padding: 3rem 20px;
-      text-align: center;
-      border-top: 1px solid rgba(99, 102, 241, 0.1);
+      text-align: left;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .footer .container {
+      max-width: 720px;
+      margin: 0 auto;
     }
 
     .social-links {
       display: flex;
-      justify-content: center;
-      gap: 2rem;
-      margin-bottom: 2rem;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
     }
 
     .social-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
       color: var(--gray);
       text-decoration: none;
       font-weight: 500;
-      transition: all 0.3s ease;
-      padding: 0.8rem 1.5rem;
-      border-radius: 50px;
-      border: 1px solid rgba(99, 102, 241, 0.2);
+      transition: color 0.2s;
     }
 
     .social-link:hover {
       color: var(--primary);
-      border-color: var(--primary);
-      transform: translateY(-3px);
-      box-shadow: 0 10px 30px rgba(99, 102, 241, 0.2);
+      text-decoration: underline;
     }
 
     .footer-text {
@@ -548,25 +400,16 @@
       font-size: 0.95rem;
     }
 
-    /* Scroll indicator */
     .scroll-indicator {
       position: absolute;
-      bottom: 40px;
-      left: 50%;
-      transform: translateX(-50%);
-      animation: bounce 2s infinite;
+      bottom: 2rem;
+      left: 20px;
     }
 
     .scroll-indicator::after {
       content: '↓';
-      font-size: 2rem;
-      color: var(--primary);
-    }
-
-    @keyframes bounce {
-      0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
-      40% { transform: translateX(-50%) translateY(-10px); }
-      60% { transform: translateX(-50%) translateY(-5px); }
+      font-size: 1.25rem;
+      color: var(--gray);
     }
 
     /* Responsive */
@@ -581,12 +424,7 @@
 
       .cta-buttons {
         flex-direction: column;
-        align-items: center;
-      }
-
-      .btn {
-        width: 100%;
-        max-width: 300px;
+        align-items: flex-start;
       }
 
       .tech-icons {
@@ -632,17 +470,20 @@
 
   <!-- Hero Section -->
   <section class="hero">
+    <div class="container">
     <div class="hero-content">
       <h1>Hey, I'm Yousuf <span class="emoji">👋</span></h1>
       <h2>I build <span class="rotating-text" id="rotatingText">backends that scale</span></h2>
       <p>I build stuff that handles real traffic and doesn't wake me up at 3am. Usually.</p>
       <p class="fun-fact">⚡ My code has only caused 2 production incidents. This month.</p>
+      <p class="right-now">Right now: <span>keeping staging and prod in sync</span></p>
       <div class="cta-buttons">
         <a href="https://github.com/yousufmunna143" class="btn btn-primary" target="_blank">Check out my code</a>
-        <a href="https://linkedin.com/in/shaik-yousuf-a39566228" class="btn btn-secondary" target="_blank">Let's talk</a>
+        <a href="https://x.com/Yousufmunna143" class="btn btn-secondary" target="_blank">Let's talk</a>
       </div>
     </div>
     <div class="scroll-indicator"></div>
+    </div>
   </section>
 
   <!-- Experience Section -->
@@ -815,12 +656,14 @@
 
   <!-- Footer -->
   <footer>
+    <div class="container">
     <div class="social-links">
       <a href="https://github.com/yousufmunna143" class="social-link" target="_blank">GitHub</a>
       <a href="https://linkedin.com/in/shaik-yousuf-a39566228" class="social-link" target="_blank">LinkedIn</a>
       <a href="https://leetcode.com/yousufmunna143" class="social-link" target="_blank">LeetCode</a>
     </div>
-    <p class="footer-text">© 2025 Shaik Yousuf. Built with passion for backend engineering.</p>
+    <p class="footer-text">© 2025 Shaik Yousuf.</p>
+    </div>
   </footer>
 
   <script>
